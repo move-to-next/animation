@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100vh;
+    margin-top: 90px;
+}
+
+
+@keyframes bg{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    z-index: 1;
+    animation:bg 10s infinite linear;
+}
+.bg .cls-1{
+    fill: orange;
+    opacity: 40%;
+}
+
+@keyframes move{
+    0%,10%{
+        transform: translate(0) rotate(0);
+    }
+    25%{
+        transform: translate(50px,-70px) rotate(10deg);
+    }
+    50%,60%{
+        transform: translate(0) rotate(0);
+    }
+    75%{
+        transform: translate(-50px,-70px) rotate(-10deg);
+    }
+    100%{
+        transform: translate(0) rotate(0);
+    }
+}
+
+.char{
+    position: absolute;
+    width: 450px;
+    height: 400px;
+    z-index: 6;
+    animation: move 4s infinite;
+}
+.char:hover{
+    transform: rotate (1turn);
+}
+
+.head{
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    z-index: 6;
+}
+.face{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    z-index: 2;
+}
+.face .cls-2{
+    fill: #e7d1b5;
+    stroke:#766452;
+    stroke-miterlimit: 20;
+}
+
+@keyframes eyeclose{
+    0%,45%{transform: scale(1);}
+    50%{transform:translateY(25px) scaley(0.1);}
+    75%,100%{transform:scale(1);}
+}
+.l_eye{
+    position: absolute;
+    margin: 156px 0 0 96px;
+    width: 12%;
+    height: 12%;
+    animation: eyeclose 4s infinite;
+}
+.l_eye .cls-3{
+    fill: #512f15;
+}
+
+.r_eye{
+    position: absolute;
+    margin: 156px 0 0 300px;
+    width: 12%;
+    height: 12%;
+    animation: eyeclose 4s infinite;
+}
+.r_eye .cls-4{
+    fill: #512f15;
+}
+
+.nose{
+    position: absolute;
+    width: 14%;
+    height: 14%;
+    margin: 230px 196px 0;
+}
+.nose .cls-5{
+    fill: #512f15;
+}
+
+.mouth{
+    position: absolute;
+    width: 13%;
+    height: 13%;
+    margin: 272px 198px 0;
+}
+.mouth .cls-6{
+    fill: transparent;
+    stroke:#512f15;
+    stroke-miterlimit:20;
+}
+
+@keyframes le-move{
+    0%{transform: rotate(-7deg) scale(1);}
+    25%{transform: rotate(10deg) scale(1.2);}
+    50%{transform: rotate(-7deg) scale(1);}
+    75%{transform: rotate(10deg) scale(1.2);}
+    100%{transform: rotate(-7deg) scale(1);}
+}
+@keyframes re-move{
+    0%{transform: rotate(0deg) scale(1);}
+    25%{transform: rotate(-10deg) scale(1.2);}
+    50%{transform: rotate(0deg) scale(1);}
+    75%{transform: rotate(-10deg) scale(1.2);}
+    100%{transform: rotate(0deg) scale(1);}
+}
+.l_ear{
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    margin: 80px 0 0 45px;
+    z-index: 2;
+    animation: le-move 1s infinite;
+}
+.r_ear{
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    margin: 80px 0 0 355px;
+    z-index: 2;
+    animation: re-move 1s infinite;
+}
+.l_ear,.r_ear{
+    fill: #e7d1b5;
+    stroke: #512f15;
+}
